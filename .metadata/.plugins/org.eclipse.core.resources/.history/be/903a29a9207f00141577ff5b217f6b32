@@ -324,6 +324,7 @@ public class MortgageEstimator {
 
 	private boolean testTextFields() {
 		//assume false until tested
+		System.out.println("hit 'testTextFields'");
 		validTextFields=true;
 		emptyTextField=false;
 		
