@@ -1,0 +1,29 @@
+
+
+public class Estimator {
+
+	public static double HousingPayment(double grossIncome, double down,
+			double interest, double monthlyDebt) {
+				return monthlyDebt;
+		// TODO Auto-generated method stub
+	}
+
+	public static double TotalObligations(double grossIncome, double down,
+			double interest, double monthlyDebt) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public static double MaxMortgage(double grossIncome, double down,
+			double interest, double monthlyDebt) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public static double MaxPayment(double grossIncome, double down,
+			double interest, double monthlyDebt) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

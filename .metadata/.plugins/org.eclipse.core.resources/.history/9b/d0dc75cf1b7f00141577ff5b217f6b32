@@ -1,0 +1,41 @@
+
+
+public class Estimator {
+	
+	private Estimator(){
+	}
+
+	public static double HousingPayment(double grossIncome, double down,
+			double interest, double monthlyDebt, double term) {
+		return (grossIncome/12)*.18;
+	}
+
+	public static double TotalObligations(double grossIncome, double down,
+			double interest, double monthlyDebt, double term) {
+		return (grossIncome/12)*.36;
+	}
+
+	public static double MaxMortgage(double grossIncome, double down,
+			double interest, double monthlyDebt, double term) {
+		//double futureVal = amount*Math.pow(1+(inter/1200), year*12);
+		double maxPay = MaxPayment(grossIncome, down, interest, monthlyDebt, term);
+		double a =840*Math.pow(1+(6/1200),360)
+		System.out.println(840*Math.pow());
+		return maxPay*Math.pow(1+(interest/1200), term*12);
+	}
+
+	public static double MaxPayment(double grossIncome, double down,
+			double interest, double monthlyDebt, double term) {
+		double totOb=TotalObligations(grossIncome, down, interest, monthlyDebt, term);
+		double housePay=HousingPayment(grossIncome, down, interest, monthlyDebt, term);
+		double housePayOb=totOb-monthlyDebt;
+		if(housePayOb>housePay){
+			return housePay;
+		} else{
+			return housePayOb;
+		}			
+	}
+
+	
+
+}

@@ -1,0 +1,76 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.SpringLayout;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+
+public class MortgageEstimator {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MortgageEstimator window = new MortgageEstimator();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public MortgageEstimator() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		SpringLayout springLayout = new SpringLayout();
+		frame.getContentPane().setLayout(springLayout);
+		
+		JLabel lblGross = new JLabel("Total Gross Income:");
+		lblGross.setHorizontalAlignment(SwingConstants.TRAILING);
+		springLayout.putConstraint(SpringLayout.WEST, lblGross, 10, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, lblGross, -252, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, lblGross, 164, SpringLayout.WEST, frame.getContentPane());
+		frame.getContentPane().add(lblGross);
+		
+		JLabel lblDebt = new JLabel("Total Monthly Debt:");
+		lblDebt.setHorizontalAlignment(SwingConstants.TRAILING);
+		springLayout.putConstraint(SpringLayout.NORTH, lblDebt, 6, SpringLayout.SOUTH, lblGross);
+		springLayout.putConstraint(SpringLayout.WEST, lblDebt, 10, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, lblDebt, -230, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, lblDebt, 0, SpringLayout.EAST, lblGross);
+		frame.getContentPane().add(lblDebt);
+		
+		JLabel lblNewLabel = new JLabel("Mortgage Interest Rate:");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.TRAILING);
+		springLayout.putConstraint(SpringLayout.NORTH, lblNewLabel, 6, SpringLayout.SOUTH, lblDebt);
+		springLayout.putConstraint(SpringLayout.WEST, lblNewLabel, 10, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, lblNewLabel, -208, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, lblNewLabel, -286, SpringLayout.EAST, frame.getContentPane());
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblTerm = new JLabel("Term:");
+		springLayout.putConstraint(SpringLayout.NORTH, lblTerm, 6, SpringLayout.SOUTH, lblNewLabel);
+		springLayout.putConstraint(SpringLayout.WEST, lblTerm, 0, SpringLayout.WEST, lblGross);
+		springLayout.putConstraint(SpringLayout.EAST, lblTerm, 0, SpringLayout.EAST, lblGross);
+		lblTerm.setHorizontalAlignment(SwingConstants.TRAILING);
+		frame.getContentPane().add(lblTerm);
+	}
+}

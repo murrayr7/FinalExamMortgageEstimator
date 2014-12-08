@@ -1,0 +1,11 @@
+
+
+public class Estimator {
+
+	public static double HousingPayment(double grossIncome, double down,
+			double interest, double monthlyDebt) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,95 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.SpringLayout;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.JSeparator;
+import java.awt.Color;
+import javax.swing.JPanel;
+
+
+public class MortgageEstimator {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MortgageEstimator window = new MortgageEstimator();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public MortgageEstimator() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		SpringLayout springLayout = new SpringLayout();
+		frame.getContentPane().setLayout(springLayout);
+		
+		JPanel panel = new JPanel();
+		springLayout.putConstraint(SpringLayout.WEST, panel, 0, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, panel, 440, SpringLayout.WEST, frame.getContentPane());
+		frame.getContentPane().add(panel);
+		panel.setLayout(new SpringLayout());
+		
+		JLabel lblGross = new JLabel("Total Gross Income:");
+		springLayout.putConstraint(SpringLayout.NORTH, panel, 95, SpringLayout.SOUTH, lblGross);
+		springLayout.putConstraint(SpringLayout.SOUTH, panel, -15, SpringLayout.SOUTH, lblGross);
+		springLayout.putConstraint(SpringLayout.NORTH, lblGross, 0, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, lblGross, 0, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, lblGross, -262, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, lblGross, -324, SpringLayout.EAST, frame.getContentPane());
+		panel.add(lblGross);
+		lblGross.setHorizontalAlignment(SwingConstants.TRAILING);
+		
+		JLabel lblDebt = new JLabel("Total Monthly Debt:");
+		springLayout.putConstraint(SpringLayout.NORTH, lblDebt, 0, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, lblDebt, 0, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, lblDebt, -262, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, lblDebt, -325, SpringLayout.EAST, frame.getContentPane());
+		panel.add(lblDebt);
+		lblDebt.setHorizontalAlignment(SwingConstants.TRAILING);
+		
+		JLabel lblInterest = new JLabel("Mortgage Interest Rate:");
+		springLayout.putConstraint(SpringLayout.NORTH, lblInterest, 0, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, lblInterest, 0, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, lblInterest, -262, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, lblInterest, -304, SpringLayout.EAST, frame.getContentPane());
+		panel.add(lblInterest);
+		lblInterest.setHorizontalAlignment(SwingConstants.TRAILING);
+		
+		JLabel lblTerm = new JLabel("Term:");
+		springLayout.putConstraint(SpringLayout.NORTH, lblTerm, 0, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, lblTerm, 0, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, lblTerm, -414, SpringLayout.EAST, frame.getContentPane());
+		panel.add(lblTerm);
+		lblTerm.setHorizontalAlignment(SwingConstants.TRAILING);
+		
+		JLabel lblDown = new JLabel("Down Payment:");
+		springLayout.putConstraint(SpringLayout.NORTH, lblDown, 0, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, lblDown, 0, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, lblDown, -353, SpringLayout.EAST, frame.getContentPane());
+		panel.add(lblDown);
+		lblDown.setHorizontalAlignment(SwingConstants.TRAILING);
+	}
+}

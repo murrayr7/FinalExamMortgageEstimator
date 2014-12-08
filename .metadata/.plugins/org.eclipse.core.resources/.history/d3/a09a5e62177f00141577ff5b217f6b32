@@ -1,0 +1,39 @@
+
+
+public class Estimator {
+	
+	private Estimator(){
+	}
+
+	public static double HousingPayment(double grossIncome, double down,
+			double interest, double monthlyDebt, double term) {
+		return (grossIncome/12)*.18;
+	}
+
+	public static double TotalObligations(double grossIncome, double down,
+			double interest, double monthlyDebt, double term) {
+		return (grossIncome/12)*.36;
+	}
+
+	public static double MaxMortgage(double grossIncome, double down,
+			double interest, double monthlyDebt, double term) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static double MaxPayment(double grossIncome, double down,
+			double interest, double monthlyDebt, double term) {
+		double totOb=TotalObligations(grossIncome, down, interest, monthlyDebt, term);
+		double housePay=HousingPayment(grossIncome, down, interest, monthlyDebt, term);
+		double housPayOb=totOb-monthlyDebt;
+		if(housePayOb>housePay){
+			return housePay;
+		}
+					
+		
+		return null;
+	}
+
+	
+
+}
